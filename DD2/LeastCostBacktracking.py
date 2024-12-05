@@ -177,5 +177,5 @@ def main():
         print("Failed to initialize router or parse nets. Exiting...")
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()

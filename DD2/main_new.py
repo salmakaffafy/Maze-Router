@@ -137,8 +137,8 @@ def parse_input(input_file):
 
 
 def main():
-    input_file = r'C:\Users\ae912\OneDrive\Desktop\DSP\pythonProject\input.txt'
-    output_file = r'C:\Users\ae912\OneDrive\Desktop\DSP\pythonProject\output.txt'
+    input_file = r'Users\salmakaffafy\Documents\GitHub\Maze-Router\DD2\input.txt' 
+    output_file = r'Users\salmakaffafy\Documents\GitHub\Maze-Router\DD2\output.txt'
 
     print("Starting routing process...")
     router, nets = parse_input(input_file)
@@ -150,5 +150,5 @@ def main():
         print("Failed to initialize router or parse nets. Exiting...")
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
