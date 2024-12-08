@@ -31,7 +31,7 @@ input.txt: Sample input file specifying grid dimensions, obstacles, and nets.
 output.txt: Generated output file with routed paths and summary metrics.
 README.md: Documentation file (this file).
 
-# Setup and Usage
+# Setup
 Requirements
 Python 3.8+
 Required libraries: matplotlib, heapq, sys
