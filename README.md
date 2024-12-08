@@ -69,7 +69,7 @@ Total Vias Used: Count of vias (layer transitions).
 Future Improvements
 Support for more layers.
 Optimized algorithms for faster routing in large grids.
-Integration with advanced visualization tools for 3D rendering.
+Integration with visualization tools.
 
 
 # Work Distribution
