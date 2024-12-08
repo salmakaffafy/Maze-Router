@@ -1,45 +1,70 @@
-# Maze Router
+# # Maze Routing Algorithm with Net Ordering Heuristic
+# Overview
+This project implements a Maze Routing Algorithm to solve grid-based routing problems in multi-layered VLSI design. The solution incorporates an advanced net ordering heuristic, optimizing routing efficiency by dynamically prioritizing nets based on their lengths. The project includes two Python modules:
 
-A Python-based routing algorithm for connecting electrical circuit nets on a grid. This project uses a Breadth-First Search (BFS) algorithm to find feasible paths between specified pins while avoiding obstacles, adhering to grid constraints, and considering multi-layer routing.
+router.py: Implements the maze routing algorithm.
+visualization.py: Provides tools for visualizing the routed nets, obstacles, and vias.
 
-How It Works
+# Features
+1. Routing Algorithm (router.py)
+Maze Routing Algorithm: Routes nets using a breadth-first search (BFS)-based approach, avoiding obstacles and considering penalties for bends and vias.
+Net Ordering Heuristic: Sorts nets by length (ascending or descending) to reduce conflicts and improve routing efficiency.
+Multi-layer Support: Routes nets across two layers with via penalties.
+Metrics Tracking: Tracks:
+Total routing cost
+Total wire length
+Longest route length
+Number of vias used
+2. Visualization (visualization.py)
+Renders a 2D grid with:
+Routed nets (color-coded by layers)
+Obstacles (layer-specific colors)
+Vias (marked in red)
+Adds a legend for easy interpretation of grid elements.
 
-	1.	Reads grid dimensions, obstacles, and net definitions from an input file.
-	2.	Routes each net using BFS to connect pins sequentially.
-	3.	Outputs the path for each net or indicates failure if routing is not possible.
+# Project Files
+router.py: Main routing logic with net ordering heuristic.
+visualization.py: Visualization tools for routed output.
+input.txt: Sample input file specifying grid dimensions, obstacles, and nets.
+output.txt: Generated output file with routed paths and summary metrics.
+README.md: Documentation file (this file).
 
- Input Format
+# Setup and Usage
+Requirements
+Python 3.8+
+Required libraries: matplotlib, heapq, sys
+Install required packages:
+      pip install matplotlib
 
-The input file should have:
-	1.	Grid Details:
-         grid_width, grid_height, bend_penalty, via_penalty
+Usage
+Router (router.py)
+Run the router with the following command:
+      python3 router.py <input_file> <output_file> <sort_order>
+Example: 
+      python3 router.py input.txt output.txt asc
 
-  2.	Obstacles:
-        OBS(layer, x, y)
-    
-  3.	Net Definitions:
-        net_name(layer, x, y)(layer, x, y)
-  4.	Example Input:
-         10, 10, 1, 2
-         OBS(1, 5, 5)
-         net1(1, 0, 0)(1, 9, 9)
+      
 
- Output Format
 
-The output file contains:
-	•	Routed paths for successful nets:
-       net_name (layer, x, y) (layer, x, y) ...
+# How It Works
 
-Failure messages for unroutable nets:
-  •	net_name failed to route.
+# Router Algorithm:
 
-  How to Run
+Parses input to extract grid info, obstacles, and nets.
+Sorts nets by length using the specified order (asc or desc).
+Routes nets sequentially, accounting for penalties and avoiding obstacles.
+Updates grid and metrics dynamically.
 
-	1.	Ensure Python 3 is installed.
-	2.	Place the input file in the same directory as the script.
-	3.	Update the file paths in the main() function:
-         input_file = 'path_to_input_file'
-         output_file = 'path_to_output_file'
+# Visualization:
 
-Run the script:
-    python maze_router.py  
+Reads the routed output file.
+Displays a grid with routed nets, obstacles, and vias, using distinct colors for clarity.
+Metrics Tracked
+Total Cost: Sum of individual net costs (length + penalties).
+Total Wire Length: Total grid cells occupied by all routed paths.
+Longest Route Length: Length of the longest net in the solution.
+Total Vias Used: Count of vias (layer transitions).
+Future Improvements
+Support for more layers.
+Optimized algorithms for faster routing in large grids.
+Integration with advanced visualization tools for 3D rendering.
