@@ -79,3 +79,6 @@ All the work on the code was done collaboratively.
 Ahmed Emad: did most of the debugging.
 
 Salma Kaffafy: did the presentation slides. 
+
+# Presentation Link
+https://www.canva.com/design/DAGYi3bJFGs/yj2SeJeZ12sn6xq5MyS_xA/edit?layoutQuery=integrated+circuits+presentation
