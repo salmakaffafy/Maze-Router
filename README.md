@@ -6,6 +6,12 @@ router.py: Implements the maze routing algorithm.
 
 visualization.py: Provides tools for visualizing the routed nets, obstacles, and vias.
 
+# Work Distribution
+
+All the work on the code was done collaboratively. 
+Ahmed Emad: did most of the debugging.
+Salma Kaffafy: did the presentation slides. 
+
 # Features
 1. Routing Algorithm (router.py)
 Maze Routing Algorithm: Routes nets using a breadth-first search (BFS)-based approach, avoiding obstacles and considering penalties for bends and vias.
