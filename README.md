@@ -6,13 +6,6 @@ router.py: Implements the maze routing algorithm.
 
 visualization.py: Provides tools for visualizing the routed nets, obstacles, and vias.
 
-# Work Distribution
-
-All the work on the code was done collaboratively. 
-
-Ahmed Emad: did most of the debugging.
-
-Salma Kaffafy: did the presentation slides. 
 
 # Features
 1. Routing Algorithm (router.py)
@@ -77,3 +70,11 @@ Future Improvements
 Support for more layers.
 Optimized algorithms for faster routing in large grids.
 Integration with advanced visualization tools for 3D rendering.
+
+# Work Distribution
+
+All the work on the code was done collaboratively. 
+
+Ahmed Emad: did most of the debugging.
+
+Salma Kaffafy: did the presentation slides. 
