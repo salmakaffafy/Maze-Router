@@ -1,4 +1,4 @@
-# # Maze Routing Algorithm with Net Ordering Heuristic
+#  Maze Routing Algorithm with Net Ordering Heuristic
 # Overview
 This project implements a Maze Routing Algorithm to solve grid-based routing problems in multi-layered VLSI design. The solution incorporates an advanced net ordering heuristic, optimizing routing efficiency by dynamically prioritizing nets based on their lengths. The project includes two Python modules:
 
@@ -48,14 +48,14 @@ Example:
 
 # How It Works
 
-# Router Algorithm:
+ Router Algorithm:
 
 Parses input to extract grid info, obstacles, and nets.
 Sorts nets by length using the specified order (asc or desc).
 Routes nets sequentially, accounting for penalties and avoiding obstacles.
 Updates grid and metrics dynamically.
 
-# Visualization:
+ Visualization:
 
 Reads the routed output file.
 Displays a grid with routed nets, obstacles, and vias, using distinct colors for clarity.
