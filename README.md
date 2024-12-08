@@ -82,5 +82,5 @@ Salma Kaffafy: did the presentation slides.
 
 
 # Presentation Link
-https://www.canva.com/design/DAGYi3bJFGs/yj2SeJeZ12sn6xq5MyS_xA/edit?layoutQuery=integrated+circuits+presentation
+https://www.canva.com/design/DAGYi3bJFGs/QeleUfxWIG2JM7Ms73IGpA/view?utm_content=DAGYi3bJFGs&utm_campaign=designshare&utm_medium=link&utm_source=editor
 
