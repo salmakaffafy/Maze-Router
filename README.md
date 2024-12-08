@@ -3,6 +3,7 @@
 This project implements a Maze Routing Algorithm to solve grid-based routing problems in multi-layered VLSI design. The solution incorporates an advanced net ordering heuristic, optimizing routing efficiency by dynamically prioritizing nets based on their lengths. The project includes two Python modules:
 
 router.py: Implements the maze routing algorithm.
+
 visualization.py: Provides tools for visualizing the routed nets, obstacles, and vias.
 
 # Features
