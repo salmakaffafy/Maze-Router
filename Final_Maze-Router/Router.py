@@ -66,7 +66,8 @@ class MazeRouter:
                     path.append(current)
                     current = came_from[current]
                 path.reverse()
-
+                for pin in path:
+                    self.obstacles.add(pin)
                 # Return the cost for this segment
                 return path, current_cost_segment
 
@@ -141,7 +142,7 @@ class MazeRouter:
         self.total_cost = sum(self.net_costs.values())
         print(f"Total cost recalculated: {self.total_cost}")
 
-    def calculate_net_lengths(self, nets, sort_order):
+    def calculate_net_lengths(self, nets):
         """Calculate the length of each net independently and return sorted nets."""
         net_lengths = []
         for net_name, pins in nets.items():
@@ -149,9 +150,7 @@ class MazeRouter:
             path = self.route_net(net_name, pins)  # Pass both net_name and pins
             if path:
                 net_lengths.append((net_name, pins, len(path) - 1))  # Store name, pins, and length
-
-        # Sorting in the required order
-        return sorted(net_lengths, key=lambda x: x[2], reverse=(sort_order == 'desc'))
+        return sorted(net_lengths, key=lambda x: x[2])  # Sort by length
 
     def route_all_sorted_nets(self, sorted_nets):
         """Route all nets in the order provided."""
@@ -166,10 +165,10 @@ class MazeRouter:
                 print(f"Failed to route net: {net_name}")
         return routed_paths
 
-    def generate_output(self, nets, output_file, sort_order):
+    def generate_output(self, nets, output_file):
         """Generate the output file with routing results."""
         print("Calculating net lengths and sorting them...")
-        sorted_nets = self.calculate_net_lengths(nets, sort_order)
+        sorted_nets = self.calculate_net_lengths(nets)
 
         with open(output_file, 'w') as f:
             # Write grid info
@@ -228,16 +227,10 @@ def parse_input(input_file):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 4:
-        print("Usage: python3 maze_router.py <input_file> <output_file> <sort_order>")
-        print("sort_order: 'asc' for ascending, 'desc' for descending")
+    if len(sys.argv) < 3:
+        print("Usage: python3 maze_router.py <input_file> <output_file>")
         sys.exit(1)
-    input_file, output_file, sort_order = sys.argv[1:4]
-
-    if sort_order not in ['asc', 'desc']:
-        print("Error: sort_order must be 'asc' or 'desc'.")
-        sys.exit(1)
-
+    input_file, output_file = sys.argv[1:3]
     router, nets = parse_input(input_file)
     if router and nets:
-        router.generate_output(nets, output_file, sort_order)
+        router.generate_output(nets, output_file)
