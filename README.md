@@ -9,7 +9,9 @@ visualization.py: Provides tools for visualizing the routed nets, obstacles, and
 # Work Distribution
 
 All the work on the code was done collaboratively. 
+
 Ahmed Emad: did most of the debugging.
+
 Salma Kaffafy: did the presentation slides. 
 
 # Features
